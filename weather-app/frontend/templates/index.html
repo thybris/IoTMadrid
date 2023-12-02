@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Weather App</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <h1>Weather App</h1>
@@ -11,9 +12,14 @@
         <input type="text" id="cityInput" placeholder="Enter City">
         <button type="submit">Get Weather</button>
     </form>
-    <div id="weatherResult">
-        <!-- Weather data will be displayed here -->
+    <div id="weatherData">
+        <h2 id="weatherLocation"></h2>
+        <p id="weatherDescription"></p>
+        <p id="weatherTemperature"></p>
+        <p id="weatherHumidity"></p>
+        <p id="weatherWind"></p>
     </div>
+    <canvas id="forecastChart" width="400" height="200"></canvas>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

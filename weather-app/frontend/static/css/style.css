@@ -1,21 +1,77 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
+    background-color: #f5f5f5;
 }
 
 #weatherForm {
+    width: 100%;
+    max-width: 400px;
     margin-bottom: 20px;
 }
 
-#weatherResult {
+#weatherForm input[type="text"] {
+    width: calc(100% - 90px);
+    padding: 10px;
+    margin-right: 10px;
     border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#weatherForm button {
+    width: 80px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #1e90ff;
+    color: white;
+    cursor: pointer;
+}
+
+#weatherForm button:hover {
+    background-color: #0b6fcd;
+}
+
+#weatherData, #forecastChart {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
     padding: 15px;
-    border-radius: 8px;
-    width: 300px;
-    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#forecastChart {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    body {
+        align-items: center;
+    }
+
+    #weatherForm input[type="text"], #weatherForm button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    #weatherForm button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    #weatherData p, #weatherData h2 {
+        font-size: 14px;
+    }
 }
