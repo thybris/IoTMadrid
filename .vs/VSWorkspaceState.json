@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\weather-app",
+    "\\weather-app\\backend",
+    "\\weather-app\\frontend",
+    "\\weather-app\\frontend\\static",
+    "\\weather-app\\frontend\\static\\css",
+    "\\weather-app\\frontend\\static\\js",
+    "\\weather-app\\frontend\\templates"
+  ],
+  "SelectedNode": "\\weather-app\\backend\\app.py",
+  "PreviewInSolutionExplorer": false
+}
