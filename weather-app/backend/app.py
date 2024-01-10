@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+from sense_hat import SenseHat
 import requests
 import random
 
@@ -8,10 +9,18 @@ API_KEY = 'eadcae6451abb11beffed9dc638dcac3'
 WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather"
 FORECAST_URL = "https://api.openweathermap.org/data/2.5/forecast"
 
-def get_sensor_data():
+""" def get_sensor_data():
     temperature = 24  # round(random.uniform(20, 30), 2)
     humidity = 12  # round(random.uniform(40, 60), 2)
+    return {'temperature': temperature, 'humidity': humidity} """
+
+def get_sensor_data():
+    sense = SenseHat()
+    temperature = round(sense.get_temperature(), 2)
+    humidity = round(sense.get_humidity(), 2)
     return {'temperature': temperature, 'humidity': humidity}
+
+
 
 @app.route('/')
 def index():
@@ -46,3 +55,6 @@ def get_forecast():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    temperature, humidity = get_sensor_data()
+    print(f'Temperature: {temperature:.2f}°C')
+    print(f'Humidity: {humidity:.2f}%')
